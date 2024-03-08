@@ -4,6 +4,8 @@
 [General]
 skip-proxy = %APPEND% iosapps.itunes.apple.com,script.hub, *.script.hub
 
+[Panel]
+{{{ST Panel}}} = script-name=规则显示, update-interval={{{update-interval}}}
 
 [Script]
 # > 京东App 历史价格 
@@ -22,6 +24,11 @@ Vvebo_response = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/profil
 重写转换 = type=http-request, pattern=^https?:\/\/script\.hub\/file\/_start_\/.+type=(?:qx-rewrite|surge-module|loon-plugin|all-module), script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/Rewrite-Parser.beta.js,timeout=300,engine=auto
 规则转换 = type=http-request, pattern=^https?:\/\/script\.hub\/file\/_start_\/.+type=rule-set, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/rule-parser.beta.js,timeout=300,engine=auto
 脚本转换 = type=http-request, pattern=^https?:\/\/script\.hub\/convert\/, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/script-converter.beta.js,timeout=300,engine=auto
+# Web
+故障排除 = type=http-request, pattern=^https?:\/\/(trouble\.shoot|surge\.tool), script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/st/js/index.js, script-update-interval={{{script-update}}}, timeout=300
+
+# Panel
+规则显示 = type=generic, script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/st/js/index.js, script-update-interval={{{script-update}}}, timeout=30, argument=list={{{List}}}&type={{{Type}}}&LogTF={{{Log}}}&icolor={{{color}}}&title={{{title}}}&icon={{{icon}}}&push={{{Push}}}
 
 [MITM]
-hostname = %APPEND% api.weibo.cn,api.m.jd.com,sub.store,testflight.apple.com,script.hub, *.script.hub
+hostname = %APPEND% api.weibo.cn,api.m.jd.com,sub.store,testflight.apple.com,script.hub, *.script.hub,trouble.shoot, *.trouble.shoot, surge.tool
