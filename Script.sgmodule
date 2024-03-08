@@ -1,6 +1,6 @@
 #!name= Script 偷的
 #!desc= 2024年3月8日15:56:12
-
+#!category=Local
 [General]
 skip-proxy = %APPEND% iosapps.itunes.apple.com,script.hub, *.script.hub
 
