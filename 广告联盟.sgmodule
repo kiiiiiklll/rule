@@ -1,6 +1,7 @@
 #!name= 广告联盟
 #!desc=MyBlockAds合集,去除爱腾优芒,排除重写"JavDB,12306,网易,简书,小米,移动云盘,菜鸟裹裹,京东极速,贴吧,酷安"
 #!author=RuCu6
+#!category=Local
 #!update=2024年3月8日16:06:33
 
 [Rule]
