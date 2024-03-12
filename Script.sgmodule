@@ -2,7 +2,7 @@
 #!desc= 2024年3月8日15:56:12
 #!category=Local
 [General]
-skip-proxy = %APPEND% iosapps.itunes.apple.com,script.hub, *.script.hub
+skip-proxy = %APPEND% iosapps.itunes.apple.com
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad.list,REJECT-DROP
 
